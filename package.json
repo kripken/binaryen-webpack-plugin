@@ -1,36 +1,26 @@
 {
   "name": "binaryen-webpack-plugin",
   "version": "0.1.0",
-  "description": "Prepare compressed versions of assets with Binaryen",
+  "description": "Shrink and optimize WebAssembly files with Binaryen",
   "author": "Alon Zakai @kripken",
-  "main": "dist/index.js",
+  "main": "src/bwp.js",
   "files": [
+    "src",
     "dist"
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "start": "npm run build -- -w",
-    "build": "cp src/index.js dist/",
-    "clean": "rm -r dist/*",
-    "test": "jest",
-    "travis:test": "npm run test -- --runInBand",
-    "webpack-defaults": "webpack-defaults"
+    "build": "webpack",
   },
   "dependencies": {
     "binaryen": "^46.0.0"
   },
   "devDependencies": {
-    "jest": "^21.2.1",
-    "webpack": "^3.8.1",
-    "webpack-defaults": "^1.6.0"
+    "webpack": "^3.10.0"
   },
   "engines": {
     "node": ">= 5.10"
   },
-  "peerDependencies": {
-    "webpack": "^2.0.0 || ^3.0.0"
-  },
-  "homepage": "https://github.com/kripken/binaryen-webpack-plugin",
   "repository": {
     "type": "git",
     "url": "git+https://https://github.com/kripken/binaryen-webpack-plugin.git"
