@@ -10,13 +10,11 @@
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "build": "webpack",
   },
   "dependencies": {
     "binaryen": "^46.0.0"
   },
   "devDependencies": {
-    "webpack": "^3.10.0"
   },
   "engines": {
     "node": ">= 5.10"
