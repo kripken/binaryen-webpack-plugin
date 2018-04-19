@@ -23,7 +23,7 @@ BinaryenPlugin.prototype.apply = function(compiler) {
           continue;
         }
         // TODO: is there a proper API for this assignment?
-        asset._source._value = optimize(value);
+//        asset._source._value = optimize(value);
       }
     }
     callback();
