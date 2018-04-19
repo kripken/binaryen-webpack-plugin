@@ -12,10 +12,10 @@ cp test/* /tmp/binaryen-webpack-plugin/
 cp binaryen-webpack-plugin-*.tgz /tmp/binaryen-webpack-plugin/
 cd /tmp/binaryen-webpack-plugin/
 # install deps and our package itself
-npm install path
-npm install webpack
-npm install webpack-cli
-npm install binaryen-webpack-plugin-0.1.0.tgz 
+npm install -D binaryen-webpack-plugin-0.1.0.tgz 
+# install dev packages
+npm install -D webpack webpack-cli wasm-loader
 # build
-./node_modules/.bin/webpack test.js
+./node_modules/.bin/webpack --config=webpack.config.js
+# or, ./node_modules/.bin/webpack --config=webpack.config.js -d --progress
 

@@ -1,17 +1,5 @@
-//
-// Used for testing purposes only
-//
 
-var BinaryenWebpackPlugin = require("binaryen-webpack-plugin");
+// do nothing
 
-module.exports = {
-  entry: "./test.js",
-  output: {
-    filename: 'test.bundle.js',
-    path: __dirname
-  },
-  plugins: [
-    new BinaryenWebpackPlugin({ sourceMap: true })
-  ],
-};
+var wasm = require('binary!./test.wasm');
 
