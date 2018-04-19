@@ -1,7 +1,7 @@
 Binaryen Webpack Plugin
 =======================
 
-A plugin for webpack that runs Binaryen on WebAssembly assets, shrinking and optimizing them. You can think of Binaryen as a minifier for WebAssembly the same way that there are minifiers for JavaScript.
+A plugin for [webpack](http://webpack.js.org/) that runs [Binaryen](https://github.com/WebAssembly/binaryen) on [WebAssembly](http://webassembly.org) assets, shrinking and optimizing them. You can think of Binaryen as a minifier for WebAssembly the same way that there are minifiers for JavaScript.
 
 Install
 -------
