@@ -15,11 +15,26 @@ function BinaryenPlugin() {
 
 BinaryenPlugin.prototype.apply = function(compiler) {
   compiler.plugin('emit', function(compilation, callback) {
-    console.log("This is an example plugin!!1");
     for (var filename in compilation.assets) {
-      console.log('asset: ' + filename + ' : ');
-      console.log(                       ' : ' + JSON.stringify(compilation.assets[filename]));
-      // TODO: optimize(filename);
+      if (/\.wasm$/.test(filename)) {
+        // process a wasm asset
+        console.log('asset: ' + filename + ' : ');
+        var asset = compilation.assets[filename];
+console.log(asset);
+for (var k in asset) console.log('key: ' + k);
+console.log(asset.source());
+        var value = asset._source._value;
+console.log('VALUE ');
+console.log(value);
+        console.log(JSON.stringify(value));
+        console.log(JSON.stringify(value.type));
+        if (!Buffer.isBuffer(value)) {
+          console.warn('binaryen-webpack-plugin: .wasm asset that is not a Buffer (' + filename + ')');
+          continue;
+        }
+        console.log('optimize it!');
+        // TODO: optimize(filename);
+      }
     }
     callback();
   });

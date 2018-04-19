@@ -30,3 +30,8 @@ Arguments
 
 TODO
 
+TODO
+====
+
+This currently runs the Binaryen optimizer on each wasm asset. We can do even better by running Binaryen metadce on the entire graph, so that if JS (and other wasm modules) don't use something a wasm file then we can remove it.
+
