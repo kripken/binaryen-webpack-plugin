@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "description": "Shrink and optimize WebAssembly files with Binaryen",
   "author": "Alon Zakai @kripken",
-  "main": "src/bwp.js",
+  "main": "index.js",
   "files": [
-    "src",
-    "dist"
+    "index.js"
   ],
   "license": "Apache-2.0",
   "scripts": {

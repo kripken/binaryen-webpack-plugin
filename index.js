@@ -23,10 +23,5 @@ BinaryenPlugin.prototype.apply = function(compiler) {
   });
 };
 
-/*
-  "dependencies": {
-    "binaryen": "^46.0.0",
-    "webpack-sources": "^1.0.1"
-  },
-*/
+module.exports = BinaryenPlugin;
 
