@@ -20,6 +20,7 @@ module.exports = {
 		new BinaryenPlugin({})
 	]
 }
+```
 
 Arguments
 =========
