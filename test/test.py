@@ -27,6 +27,15 @@ try:
   logging.warning('build')
   subprocess.check_call(['./node_modules/.bin/webpack', '--config=webpack.config.js'])
   logging.warning('verify the output')
+  orig_size = os.stat('test.wasm').st_size
+  opt_size = None
+  for name in os.listdir('dist'):
+    if name.endswith('.wasm'):
+      opt_size = os.stat(os.path.join('dist', name)).st_size
+  assert opt_size, 'must fine the wasm, and size must be > 0'
+  assert opt_size < orig_size - 15, 'must be a bunch of bytes smaller'
+  assert float(opt_size) / orig_size < 0.75, 'must be proportionally noiticeable smaller'
+  logging.warning('ok!')
 finally:
   os.chdir(old)
 
