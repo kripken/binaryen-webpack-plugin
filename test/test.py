@@ -1,12 +1,20 @@
 import os, sys
+import json
 import logging
 import shutil
 import subprocess
 
+root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+def get_version_string():
+  package_json = os.path.join(root_dir, 'package.json')
+  metadata = json.loads(open(package_json).read())
+  return metadata['version']
+
 old = os.getcwd()
 try:
   logging.warning('go to the root dir')
-  os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+  os.chdir(root_dir)
   logging.warning('pack us all up')
   subprocess.check_call(['npm', 'pack'])
   logging.warning('create a test dir and copy the relevant stuff there')
@@ -16,7 +24,7 @@ try:
   shutil.copy(os.path.join('test', 'test.js'), temp_dir)
   shutil.copy(os.path.join('test', 'test.wasm'), temp_dir)
   shutil.copy(os.path.join('test', 'webpack.config.js'), temp_dir)
-  package = 'binaryen-webpack-plugin-0.1.0.tgz' # FIXME: version number
+  package = 'binaryen-webpack-plugin-' + get_version_string() + '.tgz'
   shutil.copy(package, temp_dir)
   logging.warning('go to the temp dir')
   os.chdir(temp_dir)
