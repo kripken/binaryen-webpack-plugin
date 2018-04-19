@@ -1,0 +1,15 @@
+sudo: false
+dist: trusty
+language: node_js
+
+jobs:
+  fast_finish: true
+  include:
+    - &test-ubuntu
+      stage: test
+      node_js: 9
+      script: python test/test.py
+
+notifications:
+  email: false
+
