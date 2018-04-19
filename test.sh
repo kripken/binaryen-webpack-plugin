@@ -14,7 +14,7 @@ cd /tmp/binaryen-webpack-plugin/
 # install deps and our package itself
 npm install -D binaryen-webpack-plugin-0.1.0.tgz 
 # install dev packages
-npm install -D webpack webpack-cli wasm-loader
+npm install -D webpack webpack-cli binary-loader
 # build
 ./node_modules/.bin/webpack --config=webpack.config.js
 # or, ./node_modules/.bin/webpack --config=webpack.config.js -d --progress

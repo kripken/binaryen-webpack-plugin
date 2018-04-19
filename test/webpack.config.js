@@ -12,16 +12,6 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  module: {
-    rules: [
-      {
-        test: /\.wasm$/,
-        use: [
-          'binary-loader'
-        ]
-      }
-    ]
-  },
   plugins: [
     new BinaryenWebpackPlugin()
   ]

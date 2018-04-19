@@ -1,5 +1,5 @@
 
 // do nothing
 
-var wasm = require('binary!./test.wasm');
+var wasm = require('binary-loader!./test.binary');
 
